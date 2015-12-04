@@ -21,9 +21,10 @@ After Git and NodeJS have been installed, type the following commands into your 
 
 1. Clone the repository
 2. `cd /path/to/project/location`
-3. `npm install`
-4. `gulp init`
-5. `gulp`
+3. Replace the URL in to your PlaneBox API URL `window.data.apiURL` in **_src/static/partials_header.tpl.html**
+4. `npm install`
+5. `gulp init`
+6. `gulp`
 
 ### Project Setup Windows
 Install [CYGWIN](https://cygwin.com/install.html) and make sure to install all the packages. Then proceed to follow the steps described in the MacOSX/Linux section.

@@ -1,0 +1,117 @@
+// ================================
+// Fonts
+// ================================
+
+// --------------------------------
+// @font-face & @import
+// --------------------------------
+
+// @font-face {
+// 	font-family: 'ClarendonBT-Roman';
+// 	src:url('assets/fonts/font-folder-name/font-file.eot');
+// 	src:url('assets/fonts/font-folder-name/font-file.eot?#iefix') format('embedded-opentype'),
+// 		url('assets/fonts/font-folder-name/font-file.woff') format('woff'),
+// 		url('assets/fonts/font-folder-name/font-file.ttf') format('truetype');
+// 	font-weight: 400;
+// }
+
+@font-face {
+	font-family: 'icomoon';
+	src:url('assets/fonts/iconmoon/icomoon.eot?8uw5fb');
+	src:url('assets/fonts/iconmoon/icomoon.eot?8uw5fb#iefix') format('embedded-opentype'),
+	url('assets/fonts/iconmoon/icomoon.ttf?8uw5fb') format('truetype'),
+	url('assets/fonts/iconmoon/icomoon.woff?8uw5fb') format('woff'),
+	url('assets/fonts/iconmoon/icomoon.svg?8uw5fb#icomoon') format('svg');
+	font-weight: normal;
+	font-style: normal;
+}
+
+
+// --------------------------------
+// Font Variables
+// --------------------------------
+
+// Variables best utilized for font services without family grouping.
+$font-regular: 'Regular Font Family Name', sans-serif;
+$font-light: 'Light Font Family Name', sans-serif;
+$font-bold: 'Bold Font Family Name', sans-serif;
+
+// Variables best utilized for font services with family grouping.
+$font-name-one: 'Font Name One', sans-serif;
+$font-font-two: 'Font Name Two', sans-serif;
+
+$tahoma: 'Tahoma', 'Verdana', 'Segoe', sans-serif;
+$iconmoon: 'icomoon';
+$futura: 'futura-pt', sans-serif;
+
+
+
+// --------------------------------
+// Font Function
+// --------------------------------
+
+// Font List Map
+$fonts: (
+	fontone: (
+		regular: $font-regular,
+		light: $font-light,
+		bold: $font-bold
+	),
+	fonttwo: (
+		regular: $font-regular,
+		light: $font-light,
+		bold: $font-bold
+	),
+	tahoma: (
+		regular: $tahoma,
+		light: $tahoma,
+		bold: $tahoma
+	),
+	futura: (
+		regular: $futura,
+		light: $futura,
+		bold: $futura
+	),
+	iconmoon: (
+		regular: $iconmoon,
+		light: $iconmoon,
+		bold: $iconmoon
+	)
+);
+
+// ex: font-family: setfont(fontone, light)
+// 1st value is your "Font List Map" font label
+// 2nd value is the style from "Font List Map" array
+
+@function setfont($name, $weight: regular) {
+	@if map-has-key($fonts, $name) {
+		@return map-get(map-get($fonts, $name), $weight);
+	} @else {
+		@warn "Couldn't find a font named `#{$name}`.";
+	}
+}
+
+
+// --------------------------------
+// Font Mixin
+// --------------------------------
+
+// ex: @include setfont(font-one, 400)
+// First value is your $family and second value is your weight
+
+@mixin setfont($family: sans-serif, $weight: normal) {
+	// Default Font Stack
+	@if $family == "default" {
+		font-family: $tahoma;
+	}
+	// Font One
+	@if $family == "futura" {
+		font-family: $futura;
+	}
+
+	@if $family == "iconmoon" {
+		font-family: $iconmoon;
+	}
+
+	font-weight: $weight;
+}

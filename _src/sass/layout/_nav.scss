@@ -1,0 +1,40 @@
+// ================================
+// Navigation
+// ================================
+
+.app-header {
+	background-color: setcolor(black);
+	height: rem(60px);
+	text-align: center;
+	color: setcolor(white);
+
+	.max-container {
+		padding-left: rem(40px);
+		padding-right: rem(40px);
+		@include cf;
+	}
+	
+	.logo {
+		display: block;
+		float: left;
+		height: rem(60px);
+		width: rem(60px);
+		padding-top: rem(10px);
+		cursor: pointer;
+
+		img {
+			width: rem(60px);
+			height: rem(40px);
+			display: block;
+		}
+	}
+
+	h1 {
+		font-family: setfont(futura, light);
+		line-height: rem(60px);
+		font-size: rem(20px);
+		text-transform: uppercase;
+		display: inline;
+	}
+
+}

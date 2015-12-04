@@ -1,0 +1,29 @@
+@@include('./partials/_header.html', {
+    "body_class": "page-login"
+})
+
+@@include('./partials/_appHeader.html', {
+    "title": "Login"
+})
+
+<div ng-controller="loginController" class="max-container login-container">
+	<form name="Form" class="form" ng-submit="submitLogin()" ng-model="frmLogin" novalidate><!--don't let HTML validate. We'll take care of that.-->
+		<div>
+			<label for="username">Email</label>
+			<input type="email" name="username" id="username" ng-model="emailLogin" class="formControl" required autofocus />
+		</div>
+		<div>
+			<label for="password">Password</label>
+			<input type="password" name="password" id="password" ng-model="passwordLogin" class="formControl" required />
+		</div>
+		<div class="formAction">
+			<button class="btn orange" ng-disabled="frmLogin.$invalid">Login</button>
+        </div>
+        <div class="buttons-bottom">
+            <a class="btn orange" href="forgot-password.html">Reset Password</a>
+			<a class="btn orange" href="new-profile.html">Create Profile</a>
+		</div>
+	</form>
+</div>
+
+@@include('./partials/_footer.html')

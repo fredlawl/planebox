@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="no-js lt-ie10" ng-app="PlaneBox"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" ng-app="PlaneBox"><!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Plane Box</title>
+
+    <script src="https://use.typekit.net/vry0hwc.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css" media="screen" />
+
+    <script src="assets/vendor/geolocator.js"></script>
+    <script src="assets/vendor/angular-1.4.7.min.js"></script>
+    <script type="text/javascript">
+        var PlaneBox = angular.module('PlaneBox', []);
+        window.data = {};
+        window.data.geoData = '';
+    </script>
+</head>
+
+<body class="page-game-menu">
+
+
+<header class="app-header">
+    <div class="max-container">
+        <a href="/" class="logo">
+            <img src="assets/images/logo.png" alt="logo" />
+        </a>
+        <h1>Select Difficulty</h1>
+    </div>
+</header>
+
+
+<div ng-controller="MenuController">
+
+    <div class="max-container menu-wrapper">
+        <h2>Difficulty: <span class="orangeHead">{{difficulty}}</span></h2>
+        <form>
+            <ul class="select-difficulty">
+                <li class="difficulty-easy">
+                    <img src="/assets/images/3x3.png" ng-click="changeDifficulty('easy')">
+                </li>
+                <li class="difficulty-medium">
+                    <img src="/assets/images/4x4.png" ng-click="changeDifficulty('medium')">
+                </li>
+                <li class="difficulty-hard">
+                    <img src="/assets/images/5x5.png" ng-click="changeDifficulty('hard')">
+                </li>
+            </ul>
+        </form>
+
+        <h2>Category: <span class="orangeHead">{{category}}</span></h2>
+        <form>
+            <ul class="select-category">
+                <li class="category-city">
+                    <img ng-click="changeCategory('city')" src="/assets/images/city/city2.jpg"/>
+                </li>
+                <li class="category-nature">
+                    <img ng-click="changeCategory('nature')" src="/assets/images/nature/nature1.jpg"/>
+                </li>
+                <li class="category-console">
+                    <img ng-click="changeCategory('console')" src="/assets/images/console/console10.jpg"/>
+                </li>
+                <li class="category-bw">
+                    <img ng-click="changeCategory('bw')" src="/assets/images/bw/bw6.jpg"/>
+                </li>
+                <li class="category-cat">
+                    <img ng-click="changeCategory('cat')" src="/assets/images/cat/cat1.jpg"/>
+                </li>
+            </ul>
+        </form>
+        <button class="btn orange" ng-click="startGame()">Start</button>
+    </div>
+
+    
+</div>
+
+	        <footer>
+
+	        </footer>
+
+	    <!--<script src="assets/vendor/jquery-2.1.min.js"></script>-->
+	    <script src="assets/js/main.js"></script>
+    </body>
+</html>
+

@@ -1,0 +1,59 @@
+.max-container {
+	text-align: center;
+
+	.indexLogo {
+		margin: 10rem auto;
+	}
+	
+
+
+	.menu {
+		position: fixed;
+		bottom: 0;
+		left: 50%;
+		margin-left: -22.5rem;
+		width: 45rem;
+
+
+		.menuItem {
+			width: 15rem;
+			height: 15rem;
+			float: left;
+			line-height: 15rem;
+			font-size: 10rem;
+		}
+
+		a {
+			color: setcolor(white);
+		}
+
+		li {
+			list-style: none;
+		}
+	}
+}
+
+.darkestOrange {
+	background-color: setcolor(orange, darkest);
+}
+
+.darkOrange {
+	background-color: setcolor(orange, dark);
+}
+
+.lightOrange {
+	background-color: setcolor(orange, light);
+}
+
+.orange {
+	background-color: setcolor(orange);
+}
+
+.black {
+	background-color: setcolor(black);
+}
+
+.yellow {
+	background-color: setcolor(yellow);
+}
+

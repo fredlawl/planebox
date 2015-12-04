@@ -1,0 +1,40 @@
+.page-login,
+.page-create-profile,
+.page-forgot-password, {
+	background-image: url('/assets/images/gray-pattern.jpg');
+	background-repeat: repeat;
+	background-color: setcolor(gray);
+
+	p {
+		color: setcolor(white);
+		margin-bottom: rem(10px);
+		font-size: rem(16px);
+
+		&.show-err {
+			color: setcolor(orange);
+		}
+
+	}
+
+	.login-container {
+		padding: rem(40px);
+		position: relative;
+	}
+
+	label {
+		margin-bottom: rem(5px);
+		display: block;
+	}
+
+	input[type="email"],
+	input[type="password"] {
+		margin-bottom: rem(20px);
+		display: block;
+	}
+
+	.buttons-bottom {
+		bottom: 0;
+		left: 0;
+	}
+
+}

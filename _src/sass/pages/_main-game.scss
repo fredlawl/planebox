@@ -1,0 +1,132 @@
+.full-height {
+	min-height: 100%;
+	height: auto;
+}
+
+.main-image{
+		background-size: cover;
+		background-repeat: no-repeat;
+        width: rem(482px);
+		height: rem(482px);
+		margin: 0 auto;
+		border: 1px solid setcolor(orange);
+		margin: rem(10px) auto;
+}
+.tile{
+	border: 2px solid setcolor(black);
+	background-color: setcolor(black);
+}
+.col{
+	display: inline-block;
+	float: left;
+}
+.guessableImg{
+	width:167px;
+	height:167px;
+	padding: 0;
+	margin: 0;
+	float: left;
+}
+.popup{
+	background-image: url('/assets/images/orange-pattern.jpg');
+	background-repeat: repeat;
+	background-color: setcolor(orange, light);
+
+	width:100%;
+	height: auto;
+	min-height: 100%;
+	position:absolute;
+	left: 0px;
+	top: rem(60px);
+	visibility: hidden;
+
+	p {
+		display: block;
+		color: setcolor(white);
+		font-family: setfont(futura, light);
+	}
+
+	.winMsg {
+		font-size: rem(58px);
+		margin-bottom: rem(50px);
+		text-transform: uppercase;
+		padding-top: rem(50px);
+	}
+
+	.timeMsg {
+		font-size: rem(58px);
+
+		.span {
+			display: block;
+		}
+
+		.timerMsg {
+			display: block;
+			font-size: rem(142px);
+			font-family: setfont(futura, light);
+			line-height: .6em;
+		}
+
+	}
+
+	.btn.orange {
+		position: absolute;
+		bottom: 0;
+		height: rem(89px);
+		font-size: rem(66px);
+		display: block;
+	}
+
+	[class^="icon-"], [class*=" icon-"] {
+		font-size: rem(66px);
+		padding-left: rem(20px);
+	}
+
+}
+.popup p, a{
+	text-align:center;
+	display: block;
+}
+.btnNextLevel{
+	visibility: hidden;
+	margin-bottom: 0;
+}
+.btnStageComplete{
+	visibility: hidden;
+}
+
+.timer {
+	float: right;
+}
+
+body {
+	background-image: url('/assets/images/gray-pattern.jpg');
+	z-index: 0;
+}
+
+.category {
+	float: right;
+}
+
+.gameBar {
+	background-color: setcolor(orange, dark);
+	color: setcolor(orange, light);
+	padding: rem(5px) rem(5px);
+}
+
+.imageContainer {
+	margin-top: rem(15px);
+	width: 600px;
+}
+
+.gameStats {
+	width: 100%;
+	background-color: setcolor(orange);
+	color: setcolor(orange, light);
+	padding: 5px;
+	text-align: left;
+}
+
+.category {
+	float: right;
+}

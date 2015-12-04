@@ -1,0 +1,82 @@
+// ================================
+// Main
+// ================================
+
+.max-container {
+	max-width: 100%;
+	width: 100%;
+	margin: 0 auto;
+
+	padding-left: em(40px);
+	padding-right: em(40px);
+	position: relative;
+
+//	height: 100vh;
+//	min-height: 100vh;
+
+	@include mq(small) {
+		max-width: rem(748px);
+		width: rem(748px);
+	}
+}
+
+.btn {
+	display: block;
+	width: 100%;
+	padding: rem(10px 15px);
+	text-align: center;
+	font-family: setfont(futura, light);
+	color: setcolor(white);
+	text-transform: uppercase;
+	margin-bottom: em(15px);
+	border: none;
+	cursor: pointer;
+	font-size: rem(20px);
+
+	&:hover {
+		color: setcolor(white);
+	}
+
+	&.orange {
+		background-color: setcolor(orange);
+		color: setcolor(white);
+
+		&:hover {
+			background-color: setcolor(orange, dark);
+		}
+	}
+
+}
+
+[class^="icon-"], [class*=" icon-"] {
+	font-family: setfont(iconmoon);
+	speak: none;
+	font-style: normal;
+	font-weight: normal;
+	font-variant: normal;
+	text-transform: none;
+	line-height: 1;
+
+	/* Better Font Rendering =========== */
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+}
+
+.icon-user:before {
+	content: "\e900";
+}
+.icon-star-full:before {
+	content: "\e901";
+}
+.icon-info:before {
+	content: "\e902";
+}
+.icon-play3:before {
+	content: "\e903";
+}
+.icon-facebook2:before {
+	content: "\e904";
+}
+.icon-twitter2:before {
+	content: "\e905";
+}

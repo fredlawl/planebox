@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="no-js lt-ie10" ng-app="PlaneBox"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" ng-app="PlaneBox"><!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Plane Box</title>
+
+    <script src="https://use.typekit.net/vry0hwc.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css" media="screen" />
+
+    <script src="assets/vendor/geolocator.js"></script>
+    <script src="assets/vendor/angular-1.4.7.min.js"></script>
+    <script type="text/javascript">
+        var PlaneBox = angular.module('PlaneBox', []);
+        window.data = {};
+        window.data.geoData = '';
+    </script>
+</head>
+
+<body class="page-create-profile">
+
+
+<header class="app-header">
+    <div class="max-container">
+        <a href="/" class="logo">
+            <img src="assets/images/logo.png" alt="logo" />
+        </a>
+        <h1>Create Profile</h1>
+    </div>
+</header>
+
+
+<!--Apply angular app and controller to this page-->
+<div ng-controller="mainController" class="max-container new-profile-page  login-container">
+
+	<form name="frmProfile" ng-submit="submitForm()" novalidate><!--we'll do the validating ourselves-->
+
+			<div>
+				<label>Name</label>
+				<input type="name" name="name" class="form-control" ng-model="name"  ng-minlength="2" required autofocus>
+				<p ng-show="frmProfile.name.$error.minlength" class="show-err">Please enter your name.</p>
+			</div>
+			<div>
+				<label>Email Address</label>
+				<input type="email" name="email" class="form-control" ng-model="email" required>
+				<p ng-show="frmProfile.email.$invalid && !frmProfile.email.$pristine" class="show-err">Enter a valid email address.</p>
+			</div>
+			<div>
+				<label>Password</label>
+				<input type="password" name="password" ng-model="password" ng-minlength="6" class="form-control" required/>
+				<p ng-show="frmProfile.password.$error.minlength" class="show-err">Password must be 6 characters long.</p>
+			</div>
+			<div>
+				<label>Confirm Password</label>
+				<input type="password" name="confirmPw" ng-model="confirmPw" class="form-control" required/>
+				<p ng-show="password != confirmPw" class="show-err">Passwords do not match.</p>
+			</div>
+			<div>
+				<label>Age</label>
+				<input type="number" min="1" max="130" name="age" ng-model="age" class="form-control-short" required/>
+				<p ng-show="frmProfile.age.$error.max" class="show-err">Enter a valid age.</p>
+			</div>
+			<div>
+				<label>Gender</label>
+				<select class="form-control-short" name = "gender" ng-model="genderSelect" ng-options="opt.value as opt.text for opt in genderOptions" required>
+					<option value="">Select your Gender</option>
+				</select>
+				<p ng-show="!frmProfile.gender.$pristine && frmProfile.gender.$error.required" class="show-err">Select a gender</p>
+			</div>
+			<div>
+				<label>Occupation</label>
+				<input type="text" name="occupation" ng-model="occupation" class="form-control" minlength="2" required/>
+				<p ng-show="frmProfile.occupation.$error.minlength" class="show-err">Occupation is required</p>
+			</div>
+		<div class = "form-action">
+            <button class="btn orange" ng-disabled="frmProfile.$invalid || (password != confirmPw)">Create Profile</button>
+		</div>
+	</form>
+
+</div>
+
+	        <footer>
+
+	        </footer>
+
+	    <!--<script src="assets/vendor/jquery-2.1.min.js"></script>-->
+	    <script src="assets/js/main.js"></script>
+    </body>
+</html>
+

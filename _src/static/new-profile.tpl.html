@@ -1,0 +1,58 @@
+@@include('./partials/_header.html', {
+    "body_class": "page-create-profile"
+})
+
+@@include('./partials/_appHeader.html', {
+    "title": "Create Profile"
+})
+
+<!--Apply angular app and controller to this page-->
+<div ng-controller="mainController" class="max-container new-profile-page  login-container">
+
+	<form name="frmProfile" ng-submit="submitForm()" novalidate><!--we'll do the validating ourselves-->
+
+			<div>
+				<label>Name</label>
+				<input type="name" name="name" class="form-control" ng-model="name"  ng-minlength="2" required autofocus>
+				<p ng-show="frmProfile.name.$error.minlength" class="show-err">Please enter your name.</p>
+			</div>
+			<div>
+				<label>Email Address</label>
+				<input type="email" name="email" class="form-control" ng-model="email" required>
+				<p ng-show="frmProfile.email.$invalid && !frmProfile.email.$pristine" class="show-err">Enter a valid email address.</p>
+			</div>
+			<div>
+				<label>Password</label>
+				<input type="password" name="password" ng-model="password" ng-minlength="6" class="form-control" required/>
+				<p ng-show="frmProfile.password.$error.minlength" class="show-err">Password must be 6 characters long.</p>
+			</div>
+			<div>
+				<label>Confirm Password</label>
+				<input type="password" name="confirmPw" ng-model="confirmPw" class="form-control" required/>
+				<p ng-show="password != confirmPw" class="show-err">Passwords do not match.</p>
+			</div>
+			<div>
+				<label>Age</label>
+				<input type="number" min="1" max="130" name="age" ng-model="age" class="form-control-short" required/>
+				<p ng-show="frmProfile.age.$error.max" class="show-err">Enter a valid age.</p>
+			</div>
+			<div>
+				<label>Gender</label>
+				<select class="form-control-short" name = "gender" ng-model="genderSelect" ng-options="opt.value as opt.text for opt in genderOptions" required>
+					<option value="">Select your Gender</option>
+				</select>
+				<p ng-show="!frmProfile.gender.$pristine && frmProfile.gender.$error.required" class="show-err">Select a gender</p>
+			</div>
+			<div>
+				<label>Occupation</label>
+				<input type="text" name="occupation" ng-model="occupation" class="form-control" minlength="2" required/>
+				<p ng-show="frmProfile.occupation.$error.minlength" class="show-err">Occupation is required</p>
+			</div>
+		<div class = "form-action">
+            <button class="btn orange" ng-disabled="frmProfile.$invalid || (password != confirmPw)">Create Profile</button>
+		</div>
+	</form>
+
+</div>
+
+@@include('./partials/_footer.html')

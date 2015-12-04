@@ -1,0 +1,67 @@
+.select-difficulty,
+.select-category {
+	@include cf;
+}
+
+[class^="difficulty-"], [class*=" difficulty-"] {
+	float: left;
+	display: block;
+	width: em(189px);
+	height: em(191px);
+	margin-left: em(10px);
+	margin-right: em(10px);
+	margin-bottom: (20px);
+
+	img {
+		width: 100%;
+		height: auto;
+		display: block;
+		cursor: pointer;
+	}
+}
+
+[class^="category-"], [class*=" category-"] {
+	float: left;
+	display: block;
+	width: em(189px);
+	height: em(151px);
+	margin-left: em(10px);
+	margin-right: em(10px);
+	margin-bottom: (20px);
+
+	img {
+		width: 100%;
+		height: inherit;
+		display: block;
+		cursor: pointer;
+	}
+}
+
+.page-game-menu {
+	background-image: url('/assets/images/gray-pattern.jpg');
+	background-repeat: repeat;
+	background-color: setcolor(gray);
+
+	.menu-wrapper {
+		padding: em(40px);
+		position: relative;
+	}
+
+	h2 {
+		font-size: rem(34px);
+		color: setcolor(white);
+		margin-bottom: em(10px);
+		text-transform: uppercase;
+		@include setfont(futura);
+	}
+
+	.btn {
+		font-size: em(20px);
+		width: 100%;
+	}
+}
+
+.orangeHead {
+	color: setcolor(orange);
+}
+

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<!--[if lte IE 9]><html class="no-js lt-ie10" ng-app="PlaneBox"><![endif]-->
+<!--[if gt IE 9]><!--><html class="no-js" ng-app="PlaneBox"><!--<![endif]-->
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+    <title>Plane Box</title>
+
+    <script src="https://use.typekit.net/vry0hwc.js"></script>
+    <script>try{Typekit.load({ async: true });}catch(e){}</script>
+
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" href="style.css" media="screen" />
+
+    <script src="assets/vendor/geolocator.js"></script>
+    <script src="assets/vendor/angular-1.4.7.min.js"></script>
+    <script type="text/javascript">
+        var PlaneBox = angular.module('PlaneBox', []);
+        window.data = {};
+        window.data.geoData = '';
+    </script>
+</head>
+
+<body class="landing-home">
+
+
+	<div class="container max-container">
+		<div class="indexLogo">
+			<img src="assets/images/logo.png" alt="logo" />
+		</div>
+		<div class="menu">
+			<ul>
+				<li class="menuItem darkestOrange"></li>
+				<li><a href="about.html" class="icon-info menuItem darkOrange"></a></li>
+				<li class="menuItem lightOrange"></li>
+				<li><a class="menuItem yellow icon-user" href="login.html"></a></li>
+				<li class="menuItem black"></li>
+				<li><a class="menuItem icon-play3 orange" href="game-menu.html"></a></li>
+			</ul>
+		</div>
+	</div>
+
+	        <footer>
+
+	        </footer>
+
+	    <!--<script src="assets/vendor/jquery-2.1.min.js"></script>-->
+	    <script src="assets/js/main.js"></script>
+    </body>
+</html>
+

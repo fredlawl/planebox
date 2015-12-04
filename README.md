@@ -21,7 +21,7 @@ After Git and NodeJS have been installed, type the following commands into your 
 
 1. Clone the repository
 2. `cd /path/to/project/location`
-3. Replace the URL in to your PlaneBox API URL `window.data.apiURL` in **_src/static/partials_header.tpl.html**
+3. Replace the URL in `window.data.apiURL` to your PlaneBox API URL in **_src/static/partials/_header.tpl.html**
 4. `npm install`
 5. `gulp init`
 6. `gulp`

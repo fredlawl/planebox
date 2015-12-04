@@ -2,7 +2,7 @@
 var storage = require('store');
 
 PlaneBox.service('APIService', ['$http', function($http) {
-    var url = 'http://api-planebox.fredlawl.com';
+    var url = window.data.apiURL;
 
     function makeCall (method, endpoint, data, callback) {
         var request,
@@ -453,10 +453,10 @@ PlaneBox.service('menuService', function($window) {
 
 },{}],4:[function(require,module,exports){
 // create angular app
-var apiUrl = "http://api-planebox.fredlawl.com/auth/reset";
 
 // create angular controller
 PlaneBox.controller('forgotPwController', ['$scope', '$http', function($scope, $http) {
+    var apiUrl = window.data.apiURL + "/auth/reset";
   // function to submit the form after all validation has occurred            
 	$scope.remindPassword = function() {
 		//test message. remove when finished testing this method
@@ -477,6 +477,7 @@ PlaneBox.controller('forgotPwController', ['$scope', '$http', function($scope, $
 				});
     };
 }]);
+
 },{}],5:[function(require,module,exports){
 
 PlaneBox.service('createGrid', function() {
@@ -518,11 +519,11 @@ PlaneBox.service('createGrid', function() {
 });
 },{}],6:[function(require,module,exports){
 // create angular app
-var apiUrl = "http://api-planebox.fredlawl.com/auth/password";
 
 // create angular controller
 PlaneBox.controller('passwordController', ['$scope', '$http', function($scope, $http) {
-  // function to submit the form after all validation has occurred            
+  // function to submit the form after all validation has occurred
+    var apiUrl = window.data.apiURL + '/auth/password';
 	$scope.resetPassword = function() {
 		//test message. remove when finished testing this method
 		console.log("sending to server");
@@ -546,15 +547,18 @@ PlaneBox.controller('passwordController', ['$scope', '$http', function($scope, $
 				});
     };
 }]);
+
 },{}],7:[function(require,module,exports){
-//Login variables
-var apiLoginUrl = "http://api-planebox.fredlawl.com/auth/login";
-var msgSuccess = "You are now logged in.";
-var msgFail = "Username and password combination is not valid.";
-var storage = require('store');
+
 
 // create angular controller
 PlaneBox.controller('loginController', ['$scope', '$http', function($scope, $http) {
+    //Login variables
+    var apiLoginUrl = window.data.apiURL + "/auth/login";
+    var msgSuccess = "You are now logged in.";
+    var msgFail = "Username and password combination is not valid.";
+    var storage = require('store');
+
 	//function to submit form after validation is done.
 	$scope.submitLogin = function(){
 		var request = $http({
@@ -578,13 +582,14 @@ PlaneBox.controller('loginController', ['$scope', '$http', function($scope, $htt
 }]);
 
 },{"store":19}],8:[function(require,module,exports){
-// profile variables
-var apiUrl = "http://api-planebox.fredlawl.com/profile";
-var msgSuccess = "User Profile created. You are now logged in."
-var msgFail = "Email already in use."
 
 // create angular controller
 PlaneBox.controller('mainController', ['$scope', '$http', function($scope, $http) {
+    // profile variables
+    var apiUrl = window.data.apiURL + "/profile";
+    var msgSuccess = "User Profile created. You are now logged in.";
+    var msgFail = "Email already in use.";
+
   //options for Gender select drop down
 	$scope.genderOptions = [{value:0, text:"Female"},{value:1, text:"Male"}];
   	

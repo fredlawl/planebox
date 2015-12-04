@@ -1,9 +1,9 @@
 // create angular app
-var apiUrl = "http://api-planebox.fredlawl.com/auth/password";
 
 // create angular controller
 PlaneBox.controller('passwordController', ['$scope', '$http', function($scope, $http) {
-  // function to submit the form after all validation has occurred            
+  // function to submit the form after all validation has occurred
+    var apiUrl = window.data.apiURL + '/auth/password';
 	$scope.resetPassword = function() {
 		//test message. remove when finished testing this method
 		console.log("sending to server");

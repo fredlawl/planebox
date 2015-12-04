@@ -1,8 +1,8 @@
 // create angular app
-var apiUrl = "http://api-planebox.fredlawl.com/auth/reset";
 
 // create angular controller
 PlaneBox.controller('forgotPwController', ['$scope', '$http', function($scope, $http) {
+    var apiUrl = window.data.apiURL + "/auth/reset";
   // function to submit the form after all validation has occurred            
 	$scope.remindPassword = function() {
 		//test message. remove when finished testing this method

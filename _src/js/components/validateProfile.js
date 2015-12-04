@@ -1,10 +1,11 @@
-// profile variables
-var apiUrl = "http://api-planebox.fredlawl.com/profile";
-var msgSuccess = "User Profile created. You are now logged in."
-var msgFail = "Email already in use."
 
 // create angular controller
 PlaneBox.controller('mainController', ['$scope', '$http', function($scope, $http) {
+    // profile variables
+    var apiUrl = window.data.apiURL + "/profile";
+    var msgSuccess = "User Profile created. You are now logged in.";
+    var msgFail = "Email already in use.";
+
   //options for Gender select drop down
 	$scope.genderOptions = [{value:0, text:"Female"},{value:1, text:"Male"}];
   	

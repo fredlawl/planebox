@@ -1,7 +1,7 @@
 var storage = require('store');
 
 PlaneBox.service('APIService', ['$http', function($http) {
-    var url = 'http://api-planebox.fredlawl.com';
+    var url = window.data.apiURL;
 
     function makeCall (method, endpoint, data, callback) {
         var request,

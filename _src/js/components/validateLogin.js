@@ -1,11 +1,13 @@
-//Login variables
-var apiLoginUrl = "http://api-planebox.fredlawl.com/auth/login";
-var msgSuccess = "You are now logged in.";
-var msgFail = "Username and password combination is not valid.";
-var storage = require('store');
+
 
 // create angular controller
 PlaneBox.controller('loginController', ['$scope', '$http', function($scope, $http) {
+    //Login variables
+    var apiLoginUrl = window.data.apiURL + "/auth/login";
+    var msgSuccess = "You are now logged in.";
+    var msgFail = "Username and password combination is not valid.";
+    var storage = require('store');
+
 	//function to submit form after validation is done.
 	$scope.submitLogin = function(){
 		var request = $http({

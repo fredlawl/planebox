@@ -8,7 +8,7 @@
 	<header class="app-header">
 	    <div class="max-container">
 	        <a href="/" class="logo">
-	            <img src="assets/images/logo.png" alt="logo" />
+	            <img src="/assets/images/logo.png" alt="logo" />
 	        </a>
 	        <h1>Level {{levelNo}}</h1>
 	        <h1 class="timer">{{secondsTimer}}</h1>
@@ -17,7 +17,7 @@
 
 	<!-- Creates properly sized div "tiles" to cover a 480 by 480 px image -->
 	<div class="max-container">
-		<div class="main-image" ng-model="mainImage" style="background-image: url(_src/images/{{mainImg}})">
+		<div class="main-image" ng-model="mainImage" style="background-image: url('assets/images/{{mainImg}}')">
 			<div class="col" ng-init="xIndex = $index"  ng-repeat="x in range(columns) track by $index">
 				<div class="tile" id = "{{ ::createTile(xIndex, yIndex) }}" ng-init="yIndex = $index"
 					 ng-repeat="y in range(rows) track by $index"
@@ -30,14 +30,14 @@
         <!--Images to load go down here-->
         <div>
         	<h1 class="gameStats">{{ guessCount }} Guesses <span class="category">{{ category }}</span></h1>
-            <img class="guessableImg" ng-click= "guess(img1)" ng-model="guessImg1" ng-src="assets/images/{{img1}}">
-            <img class="guessableImg" ng-click= "guess(img2)" ng-model="guessImg2" ng-src="assets/images/{{img2}}">
-            <img class="guessableImg" ng-click= "guess(img3)" ng-model="guessImg3" ng-src="assets/images/{{img3}}">
-            <img class="guessableImg" ng-click= "guess(img4)" ng-model="guessImg4" ng-src="assets/images/{{img4}}">
-            <img class="guessableImg" ng-click= "guess(img5)" ng-model="guessImg5" ng-src="assets/images/{{img5}}">
-            <img class="guessableImg" ng-click= "guess(img6)" ng-model="guessImg6" ng-src="assets/images/{{img6}}">
-            <img class="guessableImg" ng-click= "guess(img7)" ng-model="guessImg7" ng-src="assets/images/{{img7}}">
-            <img class="guessableImg" ng-click= "guess(img8)" ng-model="guessImg8" ng-src="assets/images/{{img8}}">
+            <img class="guessableImg" ng-click= "guess(img1)" ng-model="guessImg1" ng-src="/assets/images/{{img1}}">
+            <img class="guessableImg" ng-click= "guess(img2)" ng-model="guessImg2" ng-src="/assets/images/{{img2}}">
+            <img class="guessableImg" ng-click= "guess(img3)" ng-model="guessImg3" ng-src="/assets/images/{{img3}}">
+            <img class="guessableImg" ng-click= "guess(img4)" ng-model="guessImg4" ng-src="/assets/images/{{img4}}">
+            <img class="guessableImg" ng-click= "guess(img5)" ng-model="guessImg5" ng-src="/assets/images/{{img5}}">
+            <img class="guessableImg" ng-click= "guess(img6)" ng-model="guessImg6" ng-src="/assets/images/{{img6}}">
+            <img class="guessableImg" ng-click= "guess(img7)" ng-model="guessImg7" ng-src="/assets/images/{{img7}}">
+            <img class="guessableImg" ng-click= "guess(img8)" ng-model="guessImg8" ng-src="/assets/images/{{img8}}">
         </div>
 
 

@@ -9,6 +9,7 @@
 		color: setcolor(white);
 		margin-bottom: rem(10px);
 		font-size: rem(16px);
+		text-align: left;
 
 		&.show-err {
 			color: setcolor(orange);
